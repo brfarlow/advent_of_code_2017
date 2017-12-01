@@ -7,7 +7,7 @@ with open('input.txt') as f:
     sum = 0
 
     for index, val in enumerate(file):
-        target = index + (length/2)
+        target = int(index + (length/2))
         if val == file[target % length]:
             sum += val
 
