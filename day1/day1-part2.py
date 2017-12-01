@@ -1,11 +1,14 @@
 with open('input.txt') as f:
     sum = 0
-    file = f.readline()
-    list = range(len(file))
-    total = int(len(file))
-    for index in list:
-        new_index = index + (total/2)
-        if file[list[index]] == file[list[int(new_index%total)]]:
-                sum += int(file[list[index]])
+    file = f.read()
+    file = list(map(int, file))
+    length = len(file)
+
+    sum = 0
+
+    for index, val in enumerate(file):
+        target = index + (length/2)
+        if val == file[target % length]:
+            sum += val
 
     print(sum)
